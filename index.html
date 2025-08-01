@@ -90,8 +90,12 @@
       #logo {
         width: 75px;
         aspect-ratio: auto;
-        margin-left: 5%;
         align-items: center;
+        cursor: pointer;
+      }
+
+      #logocont {
+        margin-left: 5%;
       }
 
       #cta {
@@ -180,7 +184,9 @@
   </head>
   <body>
     <div id="header">
-      <img id="logo" src="assets/logo.png" />
+      <a id="logocont" href="https://palawanbusinesssummit.vercel.app">
+  <img id="logo" src="assets/logo.png" alt="Palawan Business Summit Logo" />
+</a>
       <div id="menutextcontainer">
         <button class="menutext" href="#">SOUVENIR</button>
         <button class="menutext" href="#">ABOUT US</button>

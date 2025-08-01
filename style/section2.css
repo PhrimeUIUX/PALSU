@@ -5,8 +5,9 @@
   flex-direction: row;
   width: 100%;
   height: auto;
-  margin: 0;
-  padding: 2rem 1rem; 
+  margin: 0 0 0 0;
+  padding: 2rem 1rem 5rem 1rem; 
+
 }
 
 

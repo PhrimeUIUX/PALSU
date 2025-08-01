@@ -10,6 +10,43 @@
 <script type="text/javascript" src="js/magazine.js"></script>
 <link rel="stylesheet" href="css/magazine.css">
 </head>
+<style>
+page {
+	width: 460px;
+	height: 600px;
+	background: red;
+}
+.page-content {
+	height: 100%;
+	padding: 0px;
+	font-family: sans-serif;
+	color: #333;
+	background-image: url('https://storage.googleapis.com/ppc_toda_web_app/businesssummit/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#whiteoverlay {
+	display: flex;
+	width: 90%;
+	height: 93%;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #2a5d84;
+	justify-content: center;
+	align-items: center;
+}
+
+#covercontent {
+	width: 60%;
+	aspect-ratio: 1/1.9;
+	background-image: url('https://storage.googleapis.com/ppc_toda_web_app/businesssummit/covercontent.png');
+	background-size: cover;
+	background-position: center;
+}
+
+</style>
 <body>
 
 <div id="canvas">
@@ -19,11 +56,67 @@
 <div class="magazine-viewport">
 	<div class="container">
 		<div class="magazine">
-			<!-- Next button -->
-			<div ignore="1" class="next-button"></div>
-			<!-- Previous button -->
-			<div ignore="1" class="previous-button"></div>
+	<!-- Page 1 -->
+	<div class="page">
+		<div class="page-content">
+			<div id="whiteoverlay">
+				<div id="covercontent"></div>
+			</div>
 		</div>
+	</div>
+
+	<!-- Page 2 -->
+	<div class="page">
+		<div class="page-content">
+			<h2>Table of Contents</h2>
+			<ul>
+				<li>1. Welcome</li>
+				<li>2. Articles</li>
+				<li>3. Gallery</li>
+				<li>4. Contact</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Page 3 -->
+	<div class="page">
+		<div class="page-content">
+			<h2>Article One</h2>
+			<p>This is an article with HTML content directly embedded in the page.</p>
+		</div>
+	</div>
+
+	<!-- Page 4 -->
+	<div class="page">
+		<div class="page-content">
+			<h2>Gallery</h2>
+			<p>You can include images like this:</p>
+			<img src="your-image.jpg" style="width:100%; max-width:400px;">
+		</div>
+	</div>
+
+	<!-- Page 5 -->
+	<div class="page">
+		<div class="page-content">
+			<h2>Contact Us</h2>
+			<p>Email us at: <a href="mailto:info@example.com">info@example.com</a></p>
+		</div>
+	</div>
+
+	<!-- Page 6 -->
+	<div class="page">
+		<div class="page-content">
+			<h2>Thank You</h2>
+			<p>Thanks for reading!</p>
+		</div>
+	</div>
+
+	<!-- Add more pages up to 12 if needed -->
+
+	<!-- Next and Previous buttons -->
+	<div ignore="1" class="next-button"></div>
+	<div ignore="1" class="previous-button"></div>
+</div>
 	</div>
 </div>
 

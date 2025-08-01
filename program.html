@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Program</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f5f8fa;
-      color: #333;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #f5f8fa;
+        color: #333;
+      }
 
-    #header {
+      #header {
         display: inline-flex;
         width: 100%;
         height: 65px;
@@ -21,6 +21,12 @@
         position: fixed;
         z-index: 10;
         background: white;
+      }
+
+      #menutextcontainer {
+        display: flex;
+        margin-left: auto;
+        margin-right: 1%;
       }
 
       #menutext {
@@ -69,246 +75,337 @@
         background-color: #2631ad;
       }
 
+      h1 {
+        margin: 0;
+        font-size: 28px;
+      }
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+      section {
+        padding: 75px 20px;
+        max-width: 1000px;
+        margin: auto auto;
+      }
 
-    section {
-      padding: 75px 20px;
-      max-width: 1000px;
-      margin: auto auto;
-    }
+      h2 {
+        border-left: 5px solid #192286;
+        padding-left: 10px;
+        color: #192286;
+        margin-top: 40px;
+      }
 
-    h2 {
-      border-left: 5px solid #192286;
-      padding-left: 10px;
-      color: #192286;
-      margin-top: 40px;
-    }
+      .agenda-block {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
-    .agenda-block {
-      margin: 20px 0;
-      padding: 15px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+      .time {
+        font-weight: bold;
+        color: #555;
+      }
 
-    .time {
-      font-weight: bold;
-      color: #555;
-    }
+      .topic {
+        margin: 5px 0;
+      }
 
-    .topic {
-      margin: 5px 0;
-    }
+      .speaker {
+        color: #338b8c;
+      }
 
-    .speaker {
-      color: #338B8C;
-    }
+      .moderator,
+      .reactor {
+        margin-top: 5px;
+        color: #444;
+      }
 
-    .moderator, .reactor {
-      margin-top: 5px;
-      color: #444;
-    }
+      ul {
+        margin: 5px 0 0 20px;
+      }
 
-
-    ul {
-      margin: 5px 0 0 20px;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 22px; }
-    }
-  </style>
-</head>
-<body>
-
-      <div id="header">
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
       <a id="logocont" href="https://palawanbusinesssummit.vercel.app">
-  <img id="logo" src="assets/logo.png" alt="Palawan Business Summit Logo" />
-</a>
- <div id="menutextcontainer">
-        <button onclick="window.location.href='https://palsusouvenir.vercel.app'" class="menutext" href="#">SOUVENIR</button>
-        <button id="menutext" class="menutext" onclick="window.location.href='program.html'">PROGRAM</button>
+        <img
+          id="logo"
+          src="assets/logo.png"
+          alt="Palawan Business Summit Logo"
+        />
+      </a>
+      <div id="menutextcontainer">
+        <button
+          onclick="window.location.href='https://palsusouvenir.vercel.app'"
+          class="menutext"
+          href="#"
+        >
+          SOUVENIR
+        </button>
+        <button
+          id="menutext"
+          class="menutext"
+          onclick="window.location.href='program.html'"
+        >
+          PROGRAM
+        </button>
       </div>
-      <button id="cta" onclick="window.location.href='https://docs.google.com/forms/d/1mnTItIaymi6IAKTTh_QDtN2xIXoniaG9UPupK90Dsck/viewform?edit_requested=true&pli=1'">Register</button>
+      <button
+        id="cta"
+        onclick="window.location.href='https://docs.google.com/forms/d/1mnTItIaymi6IAKTTh_QDtN2xIXoniaG9UPupK90Dsck/viewform?edit_requested=true&pli=1'"
+      >
+        Register
+      </button>
+    </div>
+
+    <section>
+      <h2>Program Schedule</h2>
+
+      <div class="agenda-block">
+        <div class="time">07:00 AM</div>
+        <div class="topic">Registration</div>
       </div>
 
-  <section>
-    <h2>Program Schedule</h2>
+      <div class="agenda-block">
+        <div class="time">08:30 AM</div>
+        <div class="topic">
+          Invocation<br />Philippine National Anthem<br />Puerto Princesa City
+          March
+        </div>
+        <div class="speaker">Puerto Princesa Choir</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">07:00 AM</div>
-      <div class="topic">Registration</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">09:00 AM</div>
+        <div class="topic">Call to Order</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">08:30 AM</div>
-      <div class="topic">Invocation<br>Philippine National Anthem<br>Puerto Princesa City March</div>
-      <div class="speaker">Puerto Princesa Choir</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">09:05 AM</div>
+        <div class="topic">
+          Introduction of PPCCI and Overview of 1st Puerto Princesa Chamber of
+          Commerce & Industry Business Summit
+        </div>
+        <div class="speaker">
+          ENGR. ANA MARGARITA G. LUSTRE-MALIJAN<br />Regional Governor, PCCI
+          MIMAROPA
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">09:00 AM</div>
-      <div class="topic">Call to Order</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">09:15 AM</div>
+        <div class="topic">Acknowledgement of Guests and VIPs</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">09:05 AM</div>
-      <div class="topic">Introduction of PPCCI and Overview of 1st Puerto Princesa Chamber of Commerce & Industry Business Summit</div>
-      <div class="speaker">ENGR. ANA MARGARITA G. LUSTRE-MALIJAN<br>Regional Governor, PCCI MIMAROPA</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">09:20 AM</div>
+        <div class="topic">Message</div>
+        <div class="speaker">
+          HON. ROSE SALVAME<br />Congresswoman, 1st Legislative District
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">09:15 AM</div>
-      <div class="topic">Acknowledgement of Guests and VIPs</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">09:30 AM</div>
+        <div class="topic">Message</div>
+        <div class="speaker">
+          HON. JOSE CHAVEZ ALVAREZ<br />Congressman, 2nd Legislative District
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">09:20 AM</div>
-      <div class="topic">Message</div>
-      <div class="speaker">HON. ROSE SALVAME<br>Congresswoman, 1st Legislative District</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">09:40 AM</div>
+        <div class="topic">Message</div>
+        <div class="speaker">
+          ATTY. GIL ACOSTA<br />Congressman, 3rd Legislative District
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">09:30 AM</div>
-      <div class="topic">Message</div>
-      <div class="speaker">HON. JOSE CHAVEZ ALVAREZ<br>Congressman, 2nd Legislative District</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">09:50 AM</div>
+        <div class="topic">Keynote Message</div>
+        <div class="speaker">
+          ERIC JOHN G. YAYEN<br />President, Puerto Princesa Chamber Of Commerce
+          & Industry
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">09:40 AM</div>
-      <div class="topic">Message</div>
-      <div class="speaker">ATTY. GIL ACOSTA<br>Congressman, 3rd Legislative District</div>
-    </div>
+      <h2>
+        PLENARY 1: SEP DECODED - ALIGNING BUSINESS WITH ENVIRONMENTAL POLICY AND
+        PARTNERSHIPS
+      </h2>
 
-    <div class="agenda-block">
-      <div class="time">09:50 AM</div>
-      <div class="topic">Keynote Message</div>
-      <div class="speaker">ERIC JOHN G. YAYEN<br>President, Puerto Princesa Chamber Of Commerce & Industry</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">10:05 AM</div>
+        <div class="topic">Topic 1: Understanding SEP</div>
+        <div class="speaker">
+          ATTY. TEODORO JOSE S. MATTA, MNSA<br />Executive Director, Palawan
+          Council for Sustainable Development
+        </div>
+      </div>
 
-    <h2>PLENARY 1: SEP DECODED - ALIGNING BUSINESS WITH ENVIRONMENTAL POLICY AND PARTNERSHIPS</h2>
+      <div class="agenda-block">
+        <div class="time">10:25 AM</div>
+        <div class="topic">Topic 2: SEP from the Business Perspective</div>
+        <div class="speaker">MR. ERIC JOHN YAYEN<br />President, PPCCI</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">10:05 AM</div>
-      <div class="topic">Topic 1: Understanding SEP</div>
-      <div class="speaker">ATTY. TEODORO JOSE S. MATTA, MNSA<br>Executive Director, Palawan Council for Sustainable Development</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">10:45 AM</div>
+        <div class="topic">Topic 3: SEP Amnesty</div>
+        <div class="speaker">PCSD Representative</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">10:25 AM</div>
-      <div class="topic">Topic 2: SEP from the Business Perspective</div>
-      <div class="speaker">MR. ERIC JOHN YAYEN<br>President, PPCCI</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">11:05 AM</div>
+        <div class="topic">OPEN FORUM</div>
+        <div class="reactor">
+          Reactors:<br />ENGR. REX G. BUNDAC, City Building Official, Puerto
+          Princesa<br />MR. FELIZARDO CAYATOC, Provincial Environment & Natural
+          Resources Officer, PENRO
+        </div>
+        <div class="moderator">Moderator: MS. HAIDEE ENRIQUEZ</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">10:45 AM</div>
-      <div class="topic">Topic 3: SEP Amnesty</div>
-      <div class="speaker">PCSD Representative</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">11:50 AM</div>
+        <div class="topic">Awarding of Certificates of Appreciation</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">11:05 AM</div>
-      <div class="topic">OPEN FORUM</div>
-      <div class="reactor">Reactors:<br>ENGR. REX G. BUNDAC, City Building Official, Puerto Princesa<br>MR. FELIZARDO CAYATOC, Provincial Environment & Natural Resources Officer, PENRO</div>
-      <div class="moderator">Moderator: MS. HAIDEE ENRIQUEZ</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">12:00 NN – 01:00 PM</div>
+        <div class="topic">LUNCHBREAK</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">11:50 AM</div>
-      <div class="topic">Awarding of Certificates of Appreciation</div>
-    </div>
+      <h2>
+        PLENARY 2: GOVERNANCE THAT UNDERSTANDS - DRIVING LOCAL ECONOMIC GROWTH
+        THROUGH INCLUSIVITY
+      </h2>
 
-    <div class="agenda-block">
-      <div class="time">12:00 NN – 01:00 PM</div>
-      <div class="topic">LUNCHBREAK</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">01:05 PM</div>
+        <div class="topic">
+          Topic 1: Recognizing MSMEs as Agents of Economic Growth in Puerto
+          Princesa City
+        </div>
+        <div class="speaker">
+          HON. LUCILO R. BAYRON<br />Mayor, City Government of Puerto Princesa
+        </div>
+      </div>
 
-    <h2>PLENARY 2: GOVERNANCE THAT UNDERSTANDS - DRIVING LOCAL ECONOMIC GROWTH THROUGH INCLUSIVITY</h2>
+      <div class="agenda-block">
+        <div class="time">01:25 PM</div>
+        <div class="topic">
+          Topic 2: Creating a Business-Friendly Environment: ARTA’s Push for
+          Streamlined Services & Responsive Governance
+        </div>
+        <div class="speaker">
+          DR. KARL JOSEPH D. SANMOCTE<br />Regional Head, ARTA South Luzon
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">01:05 PM</div>
-      <div class="topic">Topic 1: Recognizing MSMEs as Agents of Economic Growth in Puerto Princesa City</div>
-      <div class="speaker">HON. LUCILO R. BAYRON<br>Mayor, City Government of Puerto Princesa</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">01:45 PM</div>
+        <div class="topic">
+          Topic 3: Future-Ready: Unlocking Palawan’s Potential
+        </div>
+        <div class="speaker">
+          HON. AMY ROA ALVAREZ<br />Governor, Provincial Government of Palawan
+        </div>
+        <div class="moderator">
+          Moderator: MS. HAIDEE ENRIQUEZ, MS. JANE URBANEK
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">01:25 PM</div>
-      <div class="topic">Topic 2: Creating a Business-Friendly Environment: ARTA’s Push for Streamlined Services & Responsive Governance</div>
-      <div class="speaker">DR. KARL JOSEPH D. SANMOCTE<br>Regional Head, ARTA South Luzon</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">02:05 PM</div>
+        <div class="topic">OPEN FORUM</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">01:45 PM</div>
-      <div class="topic">Topic 3: Future-Ready: Unlocking Palawan’s Potential</div>
-      <div class="speaker">HON. AMY ROA ALVAREZ<br>Governor, Provincial Government of Palawan</div>
-      <div class="moderator">Moderator: MS. HAIDEE ENRIQUEZ, MS. JANE URBANEK</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">02:20 PM</div>
+        <div class="topic">Awarding of Certificates of Appreciation</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">02:05 PM</div>
-      <div class="topic">OPEN FORUM</div>
-    </div>
+      <h2>
+        PLENARY 3: INNOVATE TO ELEVATE - LEVELING UP LOCAL ECONOMY THROUGH
+        IDEAS, TECHNOLOGY AND ENTERPRISE
+      </h2>
 
-    <div class="agenda-block">
-      <div class="time">02:20 PM</div>
-      <div class="topic">Awarding of Certificates of Appreciation</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">02:35 PM</div>
+        <div class="topic">Plenary Message</div>
+        <div class="speaker">BSMED</div>
+      </div>
 
-    <h2>PLENARY 3: INNOVATE TO ELEVATE - LEVELING UP LOCAL ECONOMY THROUGH IDEAS, TECHNOLOGY AND ENTERPRISE</h2>
+      <div class="agenda-block">
+        <div class="time">02:45 PM</div>
+        <div class="topic">
+          Topic 1: Enabling Digital Transformation for MSMEs: DICT’s Role in
+          Connectivity, E-Commerce and Innovation Support
+        </div>
+        <div class="speaker">
+          DIR. EMMYLOU V. DELFIN<br />Regional Director, DICT MIMAROPA
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">02:35 PM</div>
-      <div class="topic">Plenary Message</div>
-      <div class="speaker">BSMED</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">03:05 PM</div>
+        <div class="topic">
+          Topic 2: Science for Enterprise: DOSTs Support Through Technology and
+          Research and Development
+        </div>
+        <div class="speaker">
+          ENGR. JERRY B. MERCADO<br />OIC-Regional Director, DOST MIMAROPA
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">02:45 PM</div>
-      <div class="topic">Topic 1: Enabling Digital Transformation for MSMEs: DICT’s Role in Connectivity, E-Commerce and Innovation Support</div>
-      <div class="speaker">DIR. EMMYLOU V. DELFIN<br>Regional Director, DICT MIMAROPA</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">03:45 PM</div>
+        <div class="topic">
+          Topic 3: Growing Smarter: How DTI Empowers MSMEs Through Market Access
+          and Strategic Support
+        </div>
+        <div class="speaker">
+          EnP. AMORMIO CJS BENTER, CESE<br />Regional Director, DTI MIMAROPA
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">03:05 PM</div>
-      <div class="topic">Topic 2: Science for Enterprise: DOSTs Support Through Technology and Research and Development</div>
-      <div class="speaker">ENGR. JERRY B. MERCADO<br>OIC-Regional Director, DOST MIMAROPA</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">04:05 PM</div>
+        <div class="topic">OPEN FORUM</div>
+        <div class="reactor">
+          Reactor: DR. MARY GRACE A. MASDO<br />OIC-Dean, PSU-CBA
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">03:45 PM</div>
-      <div class="topic">Topic 3: Growing Smarter: How DTI Empowers MSMEs Through Market Access and Strategic Support</div>
-      <div class="speaker">EnP. AMORMIO CJS BENTER, CESE<br>Regional Director, DTI MIMAROPA</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">04:35 PM</div>
+        <div class="topic">Awarding of Certificates of Appreciation</div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">04:05 PM</div>
-      <div class="topic">OPEN FORUM</div>
-      <div class="reactor">Reactor: DR. MARY GRACE A. MASDO<br>OIC-Dean, PSU-CBA</div>
-    </div>
+      <div class="agenda-block">
+        <div class="time">04:45 PM</div>
+        <div class="topic">Closing Remarks</div>
+        <div class="speaker">
+          MS. SALLIE LACSON<br />Area Vice-President, PCCI South Luzon
+        </div>
+      </div>
 
-    <div class="agenda-block">
-      <div class="time">04:35 PM</div>
-      <div class="topic">Awarding of Certificates of Appreciation</div>
-    </div>
-
-    <div class="agenda-block">
-      <div class="time">04:45 PM</div>
-      <div class="topic">Closing Remarks</div>
-      <div class="speaker">MS. SALLIE LACSON<br>Area Vice-President, PCCI South Luzon</div>
-    </div>
-
-    <div class="agenda-block">
-      <div class="time">05:00 PM – 06:00 PM</div>
-      <div class="topic">PHOTO OPPORTUNITY<br>SOCIALS & NETWORKING</div>
-      <div class="speaker">PUERTO PRINCESA CITY DANCE ENSEMBLE<br>PALAWAN STATE UNIVERSITY DANCE TROUPE<br>MITU’S TRIBE</div>
-    </div>
-  </section>
-
-
-</body>
+      <div class="agenda-block">
+        <div class="time">05:00 PM – 06:00 PM</div>
+        <div class="topic">PHOTO OPPORTUNITY<br />SOCIALS & NETWORKING</div>
+        <div class="speaker">
+          PUERTO PRINCESA CITY DANCE ENSEMBLE<br />PALAWAN STATE UNIVERSITY
+          DANCE TROUPE<br />MITU’S TRIBE
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

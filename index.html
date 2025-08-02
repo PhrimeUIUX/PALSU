@@ -56,13 +56,15 @@
       }
 
       #biglogo {
-        width: 65%;
+        min-width: 400px;
+        width: 25%;
         aspect-ratio: auto;
         transition: 0.5s ease;
       }
 
       #biglogo:hover {
-        width: 70%;
+        min-width: 450px;
+        width: 27%;
       }
 
       #header {
@@ -146,7 +148,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
+        width: 100vw;
         height: auto;
         margin-top: 2%;
         gap: 40px;
@@ -164,12 +166,12 @@
       }
 
       #join_us {
-        width: 165px;
+        width: auto;
         height: auto;
         margin: 0 auto;
         font-size: 24px;
         font-weight: 600;
-        padding: 3% 3%;
+        padding: 1% 2%;
         border: none;
         border-radius: 10px;
         background: none;
@@ -190,7 +192,13 @@
       }
 
       #announcement-card-container {
+        display: flex;
+       align-items: center;
         width: 100vw;
+      }
+
+      .announcement-card {
+     width: 100vw;
       }
 
     </style>

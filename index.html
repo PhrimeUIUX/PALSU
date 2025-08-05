@@ -1,251 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
 
 
-<link rel="icon" href="assets/icon.png" type="image/x-icon">
-    
-
-<link rel="icon" type="image/png" href="assets/icon.png" sizes="32x32">
+  <link rel="icon" href="assets/icon.png" type="image/x-icon">
 
 
-<link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="icon" type="image/png" href="assets/icon.png" sizes="32x32">
 
 
-<meta property="og:image" content="https://palawanbusinesssummit.com/assets/featuregraphic.png">
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1st Palawan Business Summit</title>
-    <style>
-      html,
-      body {
-        overflow-x: hidden;
-        width: auto;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: "montserrat", sans-serif;
-      }
-
-      .hero-section {
-        padding-top: 65px;
-        position: relative;
-        height: 90vh;
-        width: 100vw;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .hero-bg {
-        position: absolute;
-        top: 0; left: 0; right: -500px; bottom: 0;
-        background: url("assets/bg.jpg") center / 150% no-repeat;
-        filter: blur(1px);
-        z-index: 1;
-      }
-
-      .hero-fade {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 20%, #fff 100%);
-        z-index: 2;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-      }
-
-  #biglogo {
-  width: clamp(280px, 40vw, 400px); /* Responsive size: min 120px, max 400px */
-  aspect-ratio: auto; /* Keeps it square */
-  transition: width 0.5s ease;
-}
-
-#biglogo:hover {
-  width: clamp(310px, 43vw, 440px); /* Slightly bigger on hover */
-}
+  <link rel="apple-touch-icon" href="assets/icon.png">
 
 
-      #header {
-        display: inline-flex;
-        width: 100vw;
-        height: 65px;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        z-index: 10;
-        background: white;
-      }
+  <meta property="og:image" content="https://palawanbusinesssummit.com/assets/featuregraphic.png">
 
-      #menutextcontainer {
-        display: flex;
-        margin-left: auto;
-        margin-right: 1%;
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1st Palawan Business Summit</title>
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+      width: auto;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "montserrat", sans-serif;
+    }
 
-      .menutext {
-        border: 0;
-        background: 0;
-        color: #192286;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-      }
+    .hero-section {
+      padding-top: 65px;
+      position: relative;
+      height: 90vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
 
-      .menutext:hover {
-        color: #4e5be6;
-      }
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: -500px;
+      bottom: 0;
+      background: url("assets/bg.jpg") center / 150% no-repeat;
+      filter: blur(1px);
+      z-index: 1;
+    }
 
-      #logo {
-        width: 75px;
-        aspect-ratio: auto;
-        align-items: center;
-        cursor: pointer;
-      }
+    .hero-fade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, #fff 100%);
+      z-index: 2;
+    }
 
-      #logocont {
-        margin-left: 5%;
-      }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
 
-      #cta {
-        border: 0;
-        border-radius: 10px;
-        background-color: #192286;
-        color: white;
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-right: 5%;
-        padding: 13px 25px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: 0.3s ease;
-      }
+    #biglogo {
+      width: clamp(280px, 40vw, 400px);
+      /* Responsive size: min 120px, max 400px */
+      aspect-ratio: auto;
+      /* Keeps it square */
+      transition: width 0.5s ease;
+    }
 
-      #cta:hover {
-        background-color: #2631ad;
-      }
+    #biglogo:hover {
+      width: clamp(310px, 43vw, 440px);
+      /* Slightly bigger on hover */
+    }
 
-      #cta2 {
-        border: 0;
-        border-radius: 10px;
-        background-color: #192286;
-        color: white;
-        font-size: 1.1rem;
-        margin-top: 0%;
-        font-weight: 600;
-        padding: 13px 25px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: 0.3s ease;
-      }
 
-      #cta2:hover {
-        background-color: #2631ad;
-      }
+    #header {
+      display: inline-flex;
+      width: 100vw;
+      height: 65px;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      z-index: 10;
+      background: white;
+    }
 
-      #buttoncont {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100vw;
-        height: auto;
-        margin-top: 2%;
-        gap: 40px;
-      }
+    #menutextcontainer {
+      display: flex;
+      margin-left: auto;
+      margin-right: 1%;
+    }
 
-      #date {
-        width: 90%;
-      
-        color: #192286;
-        font-size: 16px;
-        font-weight: 800;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-self: center;
-        justify-content: center;
-      }
+    .menutext {
+      border: 0;
+      background: 0;
+      color: #192286;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-      #location {
-       
-        
-        
-        padding: 0 24px;
-        color: #338B8C;
-      }
+    .menutext:hover {
+      color: #4e5be6;
+    }
 
-      #join_us {
-        width: auto;
-        height: auto;
-        margin: 0 auto;
-        font-size: 24px;
-        font-weight: 600;
-        padding: 15px 20px;
-        border: none;
-        border-radius: 10px;
-        background: none;
-        background-color: #338B8C;
-        color: white;
-        cursor: pointer;
-        transition: 0.3s ease;
-      }
+    #logo {
+      width: 75px;
+      aspect-ratio: auto;
+      align-items: center;
+      cursor: pointer;
+    }
 
-      #join_us:hover {
-        background-color: #3fa5a7;
-      }
+    #logocont {
+      margin-left: 5%;
+    }
 
-    
+    #cta {
+      border: 0;
+      border-radius: 10px;
+      background-color: #192286;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-right: 5%;
+      padding: 13px 25px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
 
-    </style>
-  </head>
-  <body>
-    <div id="header">
-      <a id="logocont" href="https://palawanbusinesssummit.com"> 
-  <img id="logo" src="assets/logo.png" alt="Palawan Business Summit Logo" />
-</a>
-      <div id="menutextcontainer">
-        <!-- <button onclick="window.location.href='#'" class="menutext" href="#">SOUVENIR</button> -->
-        <button class="menutext" onclick="window.location.href='/program'">PROGRAM</button>
-      </div>
-      <button id="cta" onclick="window.location.href='https://docs.google.com/forms/d/1mnTItIaymi6IAKTTh_QDtN2xIXoniaG9UPupK90Dsck/viewform?edit_requested=true&pli=1'">Register</button>
+    #cta:hover {
+      background-color: #2631ad;
+    }
+
+    #cta2 {
+      border: 0;
+      border-radius: 10px;
+      background-color: #192286;
+      color: white;
+      font-size: 1.1rem;
+      margin-top: 0%;
+      font-weight: 600;
+      padding: 13px 25px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    #cta2:hover {
+      background-color: #2631ad;
+    }
+
+    #buttoncont {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100vw;
+      height: auto;
+      margin-top: 2%;
+      gap: 40px;
+    }
+
+    #date {
+      width: 90%;
+
+      color: #192286;
+      font-size: 16px;
+      font-weight: 800;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+    }
+
+    #location {
+
+
+
+      padding: 0 24px;
+      color: #338B8C;
+    }
+
+    #join_us {
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      background: none;
+      background-color: #338B8C;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #join_us:hover {
+      background-color: #3fa5a7;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <a id="logocont" href="https://palawanbusinesssummit.com">
+      <img id="logo" src="assets/logo.png" alt="Palawan Business Summit Logo" />
+    </a>
+    <div id="menutextcontainer">
+      <!-- <button onclick="window.location.href='#'" class="menutext" href="#">SOUVENIR</button> -->
+      <button class="menutext" onclick="window.location.href='/program'">PROGRAM</button>
     </div>
+    <button id="cta"
+      onclick="window.location.href='https://docs.google.com/forms/d/1mnTItIaymi6IAKTTh_QDtN2xIXoniaG9UPupK90Dsck/viewform?edit_requested=true&pli=1'">Register</button>
+  </div>
 
-    <section class="hero-section">
-      <div class="hero-bg"></div>
-      <div class="hero-fade"></div>
-      <div class="hero-content">
-        <img id="biglogo" src="assets/logo.png" alt="logo" />
-        <div id="buttoncont">
-            <div id="date">AUGUST 13, 2025 | 8:00 AM</br>
-            <span id="location">GABRIELLA HALL, HOLIDAY SUITES, PUERTO PRINCESA CITY</span></div>
-            <button id="join_us" onclick="window.location.href='https://docs.google.com/forms/d/1mnTItIaymi6IAKTTh_QDtN2xIXoniaG9UPupK90Dsck/viewform?edit_requested=true&pli=1'">JOIN NOW</button>
+  <section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-content">
+      <img id="biglogo" src="assets/logo.png" alt="logo" />
+      <div id="buttoncont">
+        <div id="date">AUGUST 13, 2025 | 8:00 AM</br>
+          <span id="location">GABRIELLA HALL, HOLIDAY SUITES, PUERTO PRINCESA CITY</span>
         </div>
+        <button id="join_us"
+          onclick="window.location.href='https://docs.google.com/forms/d/1mnTItIaymi6IAKTTh_QDtN2xIXoniaG9UPupK90Dsck/viewform?edit_requested=true&pli=1'">JOIN
+          NOW</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <link rel="stylesheet" href="/style/section2.css">
+  <link rel="stylesheet" href="/style/section2.css">
 
 
 
-    <div class="announcement-card">
-        <img id="organizedby" src="assets/organizedby.png" alt="organizer logo">
+  <div class="announcement-card">
+    <img id="organizedby" src="assets/organizedby.png" alt="organizer logo">
     <h1>Negosyante ka ba sa Palawan?</h1>
-    <p>May mga importanteng updates para sa’yo sa <strong>1st Palawan Business Summit</strong>, ang event para sa mga negosyanteng Palaweño!</p>
+    <p>May mga importanteng updates para sa’yo sa <strong>1st Palawan Business Summit</strong>, ang event para sa mga
+      negosyanteng Palaweño!</p>
 
     <ul>
       <li>Mahalagang updates na makakatulong sa pag-level up ng negosyo</li>
@@ -271,5 +282,6 @@
   </div>
 
 
-  </body>
+</body>
+
 </html>

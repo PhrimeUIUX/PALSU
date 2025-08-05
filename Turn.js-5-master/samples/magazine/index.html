@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="../../lib/zoom.min.js"></script>
 	<script type="text/javascript" src="js/magazine.js"></script>
 	<link rel="stylesheet" href="css/magazine.css">
+	
 </head>
 <style>
 	body {
@@ -111,7 +112,7 @@
 		width: 300px;
 		font-size: 1.0rem;
 		font-weight: 600;
-		color: red;
+		color: black;
 	}
 
 	#paragraph-info {
@@ -146,6 +147,97 @@
 
 
 
+
+
+	.floating-container2 {
+		-webkit-tap-highlight-color: transparent;
+		position: relative;
+		gap: -2000px;
+
+		width: 100%;
+		max-height: 25px;
+		/* ✅ small fixed size */
+		border-radius: 9999px;
+		/* perfect circle */
+		overflow: visible;
+		/* ✅ allow content to overflow */
+		/* background-color: red; */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+		z-index: 999;
+	}
+    
+    .logo2 {
+		position: relative;
+		padding: 0 0 -100px 0;
+		scale: 25%;
+		/* background-color: red; */
+
+
+		transition: all 0.4s ease;
+	}
+
+	.contact-details2 {
+		position: relative;
+		opacity: 0;
+		padding: 0 50px;
+		transform: translateY(0);
+		margin-top: ;
+		max-height: 0;
+		overflow: visible;
+		/* background-color: red; */
+		color: black;
+		text-align: center;
+		transition: all 0.4s ease;
+	}
+
+	#contact-details2-description2 {
+		margin: 0 auto 10px auto;
+		width: 300px;
+		font-size: 1.0rem;
+		font-weight: 600;
+		color: red;
+	}
+
+	#paragraph-info2 {
+		align-self: center;
+		margin: 10px 100px;
+		width: 200px;
+		gap: 10px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	#iconsmall {
+
+
+		width: 25px;
+		height: 25px;
+	}
+
+	.floating-container2.active .logo2 {
+		padding: 0px 0 0 0;
+		transform: translateY(0%) scale(0.7);
+	}
+
+	.floating-container2.active .contact-details2 {
+		opacity: 1;
+		transform: translateY(-220%);
+		margin-top: 0px;
+		max-height: 150px;
+	}
+
+
+
+
+
+
+
 	#whiteoverlay {
 		display: flex;
 		width: 90%;
@@ -173,7 +265,8 @@
 		height: 25%;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(255, 0, 0, 0.8);
+		background: linear-gradient(to bottom, #338B8CC8, #192286C8); /* ~80% opacity */
+
 		color: white;
 		font-size: 24px;
 		font-weight: bold;
@@ -197,7 +290,8 @@
 		height: 15%;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(30, 255, 0, 0.8);
+		background: linear-gradient(to bottom, #A6A6A6C8, #737373C8); /* ~80% opacity */
+
 		color: white;
 		font-size: 24px;
 		font-weight: bold;
@@ -295,7 +389,7 @@
 					<div class="page">
 						<div class="page-content">
 							<div id="contp2">
-								<div id="headerp1">headerp1</div>
+								<div id="headerp1">CO PRESENTED BY</div>
 								<div id="whiteoverlayp1">
 									<div class="floating-container" onclick="toggleContact(this)">
 										<img src="pics/kainato.png" alt="Logo" class="logo" />
@@ -320,21 +414,32 @@
 					<div class="page">
 						<div class="page-content">
 							<div id="contp2">
-								<div id="headerp2">headerp2</div>
+								<div id="headerp2">SPECIAL THANKS TO</div>
 								<div id="whiteoverlayp2">
-									<div class="floating-container" onclick="toggleContact(this)">
-										<img src="pics/kainato.png" alt="Logo" class="logo" />
-										<div class="contact-details">
+									<div class="floating-container2" onclick="toggleContact(this)">
+										<img src="pics/kainato.png" alt="Logo" class="logo2" />
+										<div class="contact-details2">
 											
-											<p id="paragraph-info"><img id="iconsmall" src="pics/phone.png"
+											<p id="paragraph-info2"><img id="iconsmall" src="pics/phone.png"
 													alt="Phone Icon">0917 123 4567</p>
-											<p id="paragraph-info"><img id="iconsmall" src="pics/mail.png"
+											<p id="paragraph-info2"><img id="iconsmall" src="pics/mail.png"
 													alt="Mail Icon">yourpage</p>
 										</div>
 									</div>
 								</div>
-								<div id="headerp2">headerp2</div>
-								<div id="whiteoverlayp2"></div>
+								<div id="headerp2">SPECIAL THANKS TO</div>
+								<div id="whiteoverlayp2">
+										<div class="floating-container2" onclick="toggleContact(this)">
+										<img src="pics/kainato.png" alt="Logo" class="logo2" />
+										<div class="contact-details2">
+											
+											<p id="paragraph-info2"><img id="iconsmall" src="pics/phone.png"
+													alt="Phone Icon">0917 123 4567</p>
+											<p id="paragraph-info2"><img id="iconsmall" src="pics/mail.png"
+													alt="Mail Icon">yourpage</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -396,7 +501,7 @@
 		</div>
 
 		<!-- Thumbnails -->
-		<div class="thumbnails">
+		<!-- <div class="thumbnails">
 			<div>
 				<ul>
 					<li class="i">
@@ -417,7 +522,7 @@
 						<img src="pages/6-thumb.jpg" width="76" height="100" class="page-6">
 						<img src="pages/7-thumb.jpg" width="76" height="100" class="page-7">
 						<span>6-7</span>
-					</li>
+					</li> -->
 					<!-- <li class="d">
 						<img src="pages/8-thumb.jpg" width="76" height="100" class="page-8">
 						<img src="pages/9-thumb.jpg" width="76" height="100" class="page-9">

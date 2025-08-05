@@ -69,17 +69,16 @@
         height: 100%;
       }
 
-      #biglogo {
-        min-width: 250px;
-        width: 40vw;
-        aspect-ratio: auto;
-        transition: 0.5s ease;
-      }
+  #biglogo {
+  width: clamp(300px, 40vw, 400px); /* Responsive size: min 120px, max 400px */
+  aspect-ratio: auto; /* Keeps it square */
+  transition: width 0.5s ease;
+}
 
-      #biglogo:hover {
-        
-        width: 43vw;
-      }
+#biglogo:hover {
+  width: clamp(340px, 43vw, 440px); /* Slightly bigger on hover */
+}
+
 
       #header {
         display: inline-flex;

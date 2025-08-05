@@ -37,13 +37,110 @@
 		padding: 0px;
 		font-family: sans-serif;
 		color: #333;
-		background-image: url('https://storage.googleapis.com/ppc_toda_web_app/businesssummit/bg.jpg');
+		/* background-image: url('https://storage.googleapis.com/ppc_toda_web_app/businesssummit/bg.jpg'); */
 		background-size: cover;
 		background-position: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
+
+
+.floating-container {
+  position: relative;
+gap: -2000px;
+  
+  width: 100%;
+  max-height: 25px; /* ✅ small fixed size */
+  border-radius: 9999px; /* perfect circle */
+  overflow: visible;     /* ✅ allow content to overflow */
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  z-index: 999;
+}
+
+.inner-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.4s ease;
+}
+
+.logo {
+	position: relative;
+	padding: 0 0 -100px 0;
+	scale: 25%;
+	/* background-color: red; */
+  
+  
+  transition: all 0.4s ease;
+}
+
+.contact-details {
+	position: relative;
+  opacity: 0;
+  padding: 0 50px;
+  transform: translateY(0);
+  margin-top: ;
+  max-height: 0;
+  overflow: visible;
+  /* background-color: red; */
+  color: black;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+#contact-details-description {
+	margin: 0 auto 10px auto;
+	width: 300px;
+	  font-size: 1.0rem;
+	  font-weight: 600;
+  color: red;
+}
+
+#paragraph-info {
+	align-self: center;
+	margin: 10px 100px;
+	width: 200px;
+	gap: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#iconsmall {
+
+  
+  width: 25px;
+  height: 25px;
+}
+
+.floating-container.active .logo {
+	padding: 0px 0 0 0;
+  transform: translateY(0%) scale(0.7);
+}
+
+.floating-container.active .contact-details {
+  opacity: 1;
+  transform: translateY(-120%);
+  margin-top: 0px;
+  max-height: 150px;
+}
+
+
+
 
 	#whiteoverlay {
 		display: flex;
@@ -164,6 +261,13 @@
 		background-size: cover;
 		background-position: center;
 	}
+
+	#h2test {
+		font-size: 2rem;
+		color: #2a5d84;
+		text-align: center;
+	}
+
 </style>
 
 <body>
@@ -190,10 +294,17 @@
 							<div id="contp2">
 								<div id="headerp1">headerp1</div>
 								<div id="whiteoverlayp1">
-									<div id="none">
-										EMAIL
-										PASSWORD
-									</div>
+									<div class="floating-container" onclick="toggleContact(this)">
+  <img src="pics/kainato.png" alt="Logo" class="logo" />
+  <div class="contact-details">
+    <p id="contact-details-description">“We offer flavorful Filipino dishes
+that make you feel at home, served
+by a team that speak through actions”</p>
+    <p id="paragraph-info"><img id="iconsmall" src="pics/phone.png" alt="Phone Icon">0917 123 4567</p>
+    <p id="paragraph-info"><img id="iconsmall" src="pics/mail.png" alt="Mail Icon">yourpage</p>
+  </div>
+</div>
+
 								</div>
 
 							</div>
@@ -206,7 +317,14 @@
 							<div id="contp2">
 								<div id="headerp2">headerp2</div>
 								<div id="whiteoverlayp2">
-									<div id="none">awd</div>
+																		<div class="floating-container" onclick="toggleContact(this)">
+  <img src="pics/arrows.png" alt="Logo" class="logo" />
+  <div class="contact-details">
+    <p>Email: hello@example.com</p>
+    <p>Phone: 0917 123 4567</p>
+    <p>Facebook: @yourpage</p>
+  </div>
+</div>
 								</div>
 								<div id="headerp2">headerp2</div>
 								<div id="whiteoverlayp2"></div>
@@ -221,7 +339,14 @@
 							<div id="contp3">
 								<div id="headerp3">headerp3</div>
 								<div id="whiteoverlayp3">
-									<div id="none">awd</div>
+																	<div class="floating-container" onclick="toggleContact(this)">
+  <img src="pics/arrows.png" alt="Logo" class="logo" />
+  <div class="contact-details">
+    <p>Email: hello@example.com</p>
+    <p>Phone: 0917 123 4567</p>
+    <p>Facebook: @yourpage</p>
+  </div>
+</div>
 								</div>
 								<div id="headerp3">headerp3</div>
 								<div id="whiteoverlayp3"></div>
@@ -241,7 +366,7 @@
 					<!-- Page 5 -->
 					<div class="page">
 						<div class="page-content">
-							<h2>Contact Us</h2>
+							<h2 id="h2test">Contact Us</h2>
 							<p>Email us at: <a href="mailto:info@example.com">info@example.com</a></p>
 						</div>
 					</div>
@@ -286,7 +411,7 @@
 						<img src="pages/7-thumb.jpg" width="76" height="100" class="page-7">
 						<span>6-7</span>
 					</li>
-					<li class="d">
+					<!-- <li class="d">
 						<img src="pages/8-thumb.jpg" width="76" height="100" class="page-8">
 						<img src="pages/9-thumb.jpg" width="76" height="100" class="page-9">
 						<span>8-9</span>
@@ -299,11 +424,19 @@
 					<li class="i">
 						<img src="pages/12-thumb.jpg" width="76" height="100" class="page-12">
 						<span>12</span>
-					</li>
+					</li> -->
 					<ul>
 						<div>
 						</div>
 			</div>
+
+			<script>
+  function toggleContact(element) {
+  element.classList.toggle('active');
+}
+
+</script>
+
 
 			<script type="text/javascript">
 
@@ -354,7 +487,7 @@
 
 						// The number of pages
 
-						pages: 12,
+						pages: 5,
 
 						// Events
 
@@ -410,82 +543,82 @@
 
 					});
 
-					// Zoom.js
+					// // Zoom.js
 
-					$('.magazine-viewport').zoom({
-						flipbook: $('.magazine'),
+					// $('.magazine-viewport').zoom({
+					// 	flipbook: $('.magazine'),
 
-						max: function () {
+					// 	max: function () {
 
-							return largeMagazineWidth() / $('.magazine').width();
+					// 		return largeMagazineWidth() / $('.magazine').width();
 
-						},
+					// 	},
 
-						when: {
+					// 	when: {
 
-							swipeLeft: function () {
+					// 		swipeLeft: function () {
 
-								$(this).zoom('flipbook').turn('next');
+					// 			$(this).zoom('flipbook').turn('next');
 
-							},
+					// 		},
 
-							swipeRight: function () {
+					// 		swipeRight: function () {
 
-								$(this).zoom('flipbook').turn('previous');
+					// 			$(this).zoom('flipbook').turn('previous');
 
-							},
+					// 		},
 
-							resize: function (event, scale, page, pageElement) {
+					// 		resize: function (event, scale, page, pageElement) {
 
-								if (scale == 1)
-									loadSmallPage(page, pageElement);
-								else
-									loadLargePage(page, pageElement);
+					// 			if (scale == 1)
+					// 				loadSmallPage(page, pageElement);
+					// 			else
+					// 				loadLargePage(page, pageElement);
 
-							},
+					// 		},
 
-							zoomIn: function () {
+					// 		zoomIn: function () {
 
-								$('.thumbnails').hide();
-								$('.made').hide();
-								$('.magazine').removeClass('animated').addClass('zoom-in');
-								$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+					// 			$('.thumbnails').hide();
+					// 			$('.made').hide();
+					// 			$('.magazine').removeClass('animated').addClass('zoom-in');
+					// 			$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
 
-								if (!window.escTip && !$.isTouch) {
-									escTip = true;
+					// 			if (!window.escTip && !$.isTouch) {
+					// 				escTip = true;
 
-									$('<div />', { 'class': 'exit-message' }).
-										html('<div>Press ESC to exit</div>').
-										appendTo($('body')).
-										delay(2000).
-										animate({ opacity: 0 }, 500, function () {
-											$(this).remove();
-										});
-								}
-							},
+					// 				$('<div />', { 'class': 'exit-message' }).
+					// 					html('<div>Press ESC to exit</div>').
+					// 					appendTo($('body')).
+					// 					delay(2000).
+					// 					animate({ opacity: 0 }, 500, function () {
+					// 						$(this).remove();
+					// 					});
+					// 			}
+					// 		},
 
-							zoomOut: function () {
+					// 		zoomOut: function () {
 
-								$('.exit-message').hide();
-								$('.thumbnails').fadeIn();
-								$('.made').fadeIn();
-								$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+					// 			$('.exit-message').hide();
+					// 			$('.thumbnails').fadeIn();
+					// 			$('.made').fadeIn();
+					// 			$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
 
-								setTimeout(function () {
-									$('.magazine').addClass('animated').removeClass('zoom-in');
-									resizeViewport();
-								}, 0);
+					// 			setTimeout(function () {
+					// 				$('.magazine').addClass('animated').removeClass('zoom-in');
+					// 				resizeViewport();
+					// 			}, 0);
 
-							}
-						}
-					});
+					// 		}
+					// 	}
+					// });
 
-					// Zoom event
+					// // Zoom event
 
-					if ($.isTouch)
-						$('.magazine-viewport').on('zoom.doubleTap', zoomTo);
-					else
-						$('.magazine-viewport').on('zoom.tap', zoomTo);
+					// if ($.isTouch)
+					// 	$('.magazine-viewport').on('zoom.doubleTap', zoomTo);
+					// else
+					// 	$('.magazine-viewport').on('zoom.tap', zoomTo);
 
 
 					// Using arrow keys to turn the page

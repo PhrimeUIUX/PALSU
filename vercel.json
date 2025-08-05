@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/program", "destination": "/program.html" },
-    { "source": "/souvenir_draft", "destination": "/Turn.js-5-master/samples/magazine/index.html" }
+    { "source": "/souvenir_draft", "destination": "/souvenir.html" }
   ]
 }

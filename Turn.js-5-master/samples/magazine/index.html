@@ -10,7 +10,8 @@
 	<script type="text/javascript" src="../../lib/zoom.min.js"></script>
 	<script type="text/javascript" src="js/magazine.js"></script>
 	<link rel="stylesheet" href="css/magazine.css">
-	
+	<meta property="og:image" content="https://palawanbusinesssummit.com/Turn.js-5-master/samples/magazine/pics/featuregraphic.png">
+
 </head>
 <style>
 	body {
@@ -107,7 +108,7 @@
 		transition: all 0.4s ease;
 	}
 
-	#contact-details-description {	
+	#contact-details-description {
 		margin: 0 auto 10px auto;
 		width: 300px;
 		font-size: 1.0rem;
@@ -170,8 +171,8 @@
 		cursor: pointer;
 		z-index: 999;
 	}
-    
-    .logo2 {
+
+	.logo2 {
 		position: relative;
 		padding: 0 0 -100px 0;
 		scale: 25%;
@@ -234,6 +235,89 @@
 
 
 
+	.floating-container3 {
+		-webkit-tap-highlight-color: transparent;
+		position: relative;
+		gap: -2000px;
+
+		width: 100px;
+		max-height: 25px;
+		/* ✅ small fixed size */
+		border-radius: 9999px;
+		/* perfect circle */
+		overflow: visible;
+		/* ✅ allow content to overflow */
+		/* background-color: red; */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+		z-index: 999;
+	}
+
+	.logo3 {
+		position: relative;
+		padding: 0 0 -100px 0;
+		scale: 25%;
+		/* background-color: red; */
+
+
+		transition: all 0.4s ease;
+	}
+
+	.contact-details3 {
+		position: relative;
+		opacity: 0;
+		padding: 0 100px;
+		transform: translateY(0);
+		margin-top: ;
+		max-height: 0;
+		overflow: visible;
+		/* background-color: red; */
+		color: black;
+		text-align: center;
+		transition: all 0.4s ease;
+	}
+
+	#contact-details3-description3 {
+		margin: 0 auto 10px auto;
+		width: 50px;
+		font-size: 1.0rem;
+		font-weight: 600;
+		color: red;
+	}
+
+	#paragraph-info3 {
+		align-self: center;
+		margin: 10px 50px;
+		width: 150px;
+		gap: 10px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	#iconsmall {
+
+
+		width: 25px;
+		height: 25px;
+	}
+
+	.floating-container3.active .logo3 {
+		padding: 0px 0 0 0;
+		transform: translateY(0%) scale(0.7);
+	}
+
+	.floating-container3.active .contact-details3 {
+		opacity: 1;
+		transform: translateY(-220%);
+		margin-top: 0px;
+		max-height: 150px;
+	}
+
 
 
 
@@ -259,18 +343,36 @@
 		align-items: center;
 	}
 
-	#headerp1 {
+	[id^="headerp"] {
 		display: flex;
+		flex-direction: column-reverse;
 		width: 100%;
 		height: 25%;
 		justify-content: center;
 		align-items: center;
-		background: linear-gradient(to bottom, #338B8CC8, #192286C8); /* ~80% opacity */
+		background: linear-gradient(to bottom, #338B8CC8, #192286C8);
+		/* ~80% opacity */
 
 		color: white;
 		font-size: 24px;
 		font-weight: bold;
 		margin-bottom: -20px;
+		transition: 0.1s ease;
+	}
+
+	[id^="headerp"].active {
+		font-size: 1.0rem;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+
+	[id^="headerp"].active::before {
+		content: "KA INATO";
+		display: block;
+		font-size: 1.9rem;
+		font-weight: 800;
+		opacity: 1;
+		margin-bottom: 0px;
 	}
 
 	#whiteoverlayp1 {
@@ -290,12 +392,28 @@
 		height: 15%;
 		justify-content: center;
 		align-items: center;
-		background: linear-gradient(to bottom, #A6A6A6C8, #737373C8); /* ~80% opacity */
+		background: linear-gradient(to bottom, #A6A6A6C8, #737373C8);
+		/* ~80% opacity */
 
 		color: white;
 		font-size: 24px;
 		font-weight: bold;
 		margin-bottom: -20px;
+	}
+
+		#headerp2.active {
+		font-size: 1.0rem;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+
+	#headerp2.active::before {
+		content: "KA INATO";
+		display: block;
+		font-size: 1.9rem;
+		font-weight: 800;
+		opacity: 1;
+		margin-bottom: 0px;
 	}
 
 	#whiteoverlayp2 {
@@ -335,9 +453,10 @@
 		height: 15%;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(162, 0, 255, 0.8);
+		background: linear-gradient(to bottom, #AD8A56C8, #6A3805C8);
+		/* ~80% opacity */
 		color: white;
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: bold;
 		margin-bottom: -20px;
 	}
@@ -359,6 +478,71 @@
 		background-size: cover;
 		background-position: center;
 	}
+
+	#covercontent2 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent2.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	#covercontent3 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent3.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	#covercontent4 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent4.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	#covercontent5 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent5.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	#covercontent6 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent6.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	#covercontent7 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent7.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	#covercontent8 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent8.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	#covercontent9 {
+		height: 100%;
+		aspect-ratio: 1/1.5;
+		background-image: url('pics/covercontent9.png');
+		background-size: cover;
+		background-position: center;
+	}
+
 
 	#h2test {
 		font-size: 2rem;
@@ -385,11 +569,21 @@
 						</div>
 					</div>
 
+					<div class="page">
+						<div class="page-content">
+							<div id="whiteoverlay">
+								<div id="covercontent2"></div>
+							</div>
+						</div>
+					</div>
+
+					
+
 					<!-- Page 2 -->
 					<div class="page">
 						<div class="page-content">
 							<div id="contp2">
-								<div id="headerp1">CO PRESENTED BY</div>
+								<div id="headerp1" onclick="toggleContact(this)">CO PRESENTED BY</div>
 								<div id="whiteoverlayp1">
 									<div class="floating-container" onclick="toggleContact(this)">
 										<img src="pics/kainato.png" alt="Logo" class="logo" />
@@ -414,12 +608,12 @@
 					<div class="page">
 						<div class="page-content">
 							<div id="contp2">
-								<div id="headerp2">SPECIAL THANKS TO</div>
+								<div id="headerp2" onclick="toggleContact(this)">SPECIAL THANKS TO</div>
 								<div id="whiteoverlayp2">
 									<div class="floating-container2" onclick="toggleContact(this)">
 										<img src="pics/kainato.png" alt="Logo" class="logo2" />
 										<div class="contact-details2">
-											
+
 											<p id="paragraph-info2"><img id="iconsmall" src="pics/phone.png"
 													alt="Phone Icon">0917 123 4567</p>
 											<p id="paragraph-info2"><img id="iconsmall" src="pics/mail.png"
@@ -427,12 +621,12 @@
 										</div>
 									</div>
 								</div>
-								<div id="headerp2">SPECIAL THANKS TO</div>
+								<div id="headerp2" onclick="toggleContact(this)">SPECIAL THANKS TO</div>
 								<div id="whiteoverlayp2">
-										<div class="floating-container2" onclick="toggleContact(this)">
+									<div class="floating-container2" onclick="toggleContact(this)">
 										<img src="pics/kainato.png" alt="Logo" class="logo2" />
 										<div class="contact-details2">
-											
+
 											<p id="paragraph-info2"><img id="iconsmall" src="pics/phone.png"
 													alt="Phone Icon">0917 123 4567</p>
 											<p id="paragraph-info2"><img id="iconsmall" src="pics/mail.png"
@@ -445,51 +639,128 @@
 					</div>
 
 					<!-- Page 4 -->
-					<!-- <div class="page">
+					<div class="page">
 						<div class="page-content">
 							<div id="contp33">
 								<div id="contp3">
-									<div id="headerp3">headerp3</div>
+									<div id="headerp3">SUPPORTED BY</div>
 									<div id="whiteoverlayp3">
-										<div class="floating-container" onclick="toggleContact(this)">
-											<img src="pics/arrows.png" alt="Logo" class="logo" />
-											<div class="contact-details">
-												<p>Email: hello@example.com</p>
-												<p>Phone: 0917 123 4567</p>
-												<p>Facebook: @yourpage</p>
+										<div class="floating-container3" onclick="toggleContact(this)">
+											<img src="pics/kainato.png" alt="Logo" class="logo3" />
+											<div class="contact-details3">
+
+												<p id="paragraph-info3"><img id="iconsmall" src="pics/phone.png"
+														alt="Phone Icon">0917 123 4567</p>
+												<p id="paragraph-info3"><img id="iconsmall" src="pics/mail.png"
+														alt="Mail Icon">yourpage</p>
 											</div>
 										</div>
 									</div>
-									<div id="headerp3">headerp3</div>
-									<div id="whiteoverlayp3"></div>
+									<div id="headerp3">SUPPORTED BY</div>
+									<div id="whiteoverlayp3">
+										<div class="floating-container3" onclick="toggleContact(this)">
+											<img src="pics/kainato.png" alt="Logo" class="logo3" />
+											<div class="contact-details3">
+
+												<p id="paragraph-info3"><img id="iconsmall" src="pics/phone.png"
+														alt="Phone Icon">0917 123 4567</p>
+												<p id="paragraph-info3"><img id="iconsmall" src="pics/mail.png"
+														alt="Mail Icon">yourpage</p>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div id="contp3">
-									<div id="headerp3">headerp3</div>
+									<div id="headerp3">SUPPORTED BY</div>
 									<div id="whiteoverlayp3">
-										<div id="none">awd</div>
+										<div id="none">
+											<div class="floating-container3" onclick="toggleContact(this)">
+												<img src="pics/kainato.png" alt="Logo" class="logo3" />
+												<div class="contact-details3">
+
+													<p id="paragraph-info3"><img id="iconsmall" src="pics/phone.png"
+															alt="Phone Icon">0917 123 4567</p>
+													<p id="paragraph-info3"><img id="iconsmall" src="pics/mail.png"
+															alt="Mail Icon">yourpage</p>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div id="headerp3">headerp3</div>
-									<div id="whiteoverlayp3"></div>
+									<div id="headerp3">SUPPORTED BY</div>
+									<div id="whiteoverlayp3">
+										<div class="floating-container3" onclick="toggleContact(this)">
+											<img src="pics/kainato.png" alt="Logo" class="logo3" />
+											<div class="contact-details3">
+
+												<p id="paragraph-info3"><img id="iconsmall" src="pics/phone.png"
+														alt="Phone Icon">0917 123 4567</p>
+												<p id="paragraph-info3"><img id="iconsmall" src="pics/mail.png"
+														alt="Mail Icon">yourpage</p>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					Page 5 -->
-					<!-- <div class="page">
+					<!-- Page 5 -->
+					<div class="page">
 						<div class="page-content">
-							<h2 id="h2test">Contact Us</h2>
-							<p>Email us at: <a href="mailto:info@example.com">info@example.com</a></p>
+							<div id="whiteoverlay">
+								<div id="covercontent3"></div>
+							</div>
 						</div>
 					</div>
 
-					Page 6 -->
-					<!-- <div class="page">
+					<!-- Page 6 -->
+					<div class="page">
 						<div class="page-content">
-							<h2>Thank You</h2>
-							<p>Thanks for reading!</p>
+							<div id="whiteoverlay">
+								<div id="covercontent4"></div>
+							</div>
 						</div>
-					</div> -->
+					</div>
+
+					<div class="page">
+						<div class="page-content">
+							<div id="whiteoverlay">
+								<div id="covercontent5"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="page">
+						<div class="page-content">
+							<div id="whiteoverlay">
+								<div id="covercontent6"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="page">
+						<div class="page-content">
+							<div id="whiteoverlay">
+								<div id="covercontent7"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="page">
+						<div class="page-content">
+							<div id="whiteoverlay">
+								<div id="covercontent8"></div>
+							</div>
+						</div>
+					</div>
+
+						<div class="page">
+						<div class="page-content">
+							<div id="whiteoverlay">
+								<div id="covercontent9"></div>
+							</div>
+						</div>
+					</div>
 
 					<!-- Add more pages up to 12 if needed -->
 
@@ -523,7 +794,7 @@
 						<img src="pages/7-thumb.jpg" width="76" height="100" class="page-7">
 						<span>6-7</span>
 					</li> -->
-					<!-- <li class="d">
+		<!-- <li class="d">
 						<img src="pages/8-thumb.jpg" width="76" height="100" class="page-8">
 						<img src="pages/9-thumb.jpg" width="76" height="100" class="page-9">
 						<span>8-9</span>
@@ -537,405 +808,421 @@
 						<img src="pages/12-thumb.jpg" width="76" height="100" class="page-12">
 						<span>12</span>
 					</li> -->
-					<ul>
-						<div>
-						</div>
+		<ul>
+			<div>
 			</div>
+	</div>
 
-			<script>
-				function toggleContact(element) {
-					element.classList.toggle('active');
+	<script>
+  function toggleContact(element) {
+    let container;
+    let contWrapper;
+
+    // Determine whether click is from header or floating-container
+    if (element.id.startsWith('headerp')) {
+      contWrapper = element.closest('[id^="contp"]');
+      container = contWrapper.querySelector('[class^="floating-container"]');
+    } else if (element.className.startsWith('floating-container')) {
+      container = element;
+      contWrapper = element.closest('[id^="contp"]');
+    }
+
+    // Toggle active class on container
+    container.classList.toggle('active');
+
+    // Toggle corresponding header
+    const header = contWrapper.querySelector('[id^="headerp"]');
+    header.classList.toggle('active');
+  }
+</script>
+
+
+	<script type="text/javascript">
+
+		function loadApp() {
+
+			$('#canvas').fadeIn(1000);
+
+			var flipbook = $('.magazine');
+
+			// Check if the CSS was already loaded
+
+			if (flipbook.width() == 0 || flipbook.height() == 0) {
+				setTimeout(loadApp, 10);
+				return;
+			}
+
+			// Create the flipbook
+
+			flipbook.turn({
+
+				// Magazine width
+
+				width: 922,
+
+				// Magazine height
+
+				height: 600,
+
+				// Duration in millisecond
+
+				duration: 1000,
+
+				// Hardware acceleration
+
+				acceleration: true,
+
+				// Enables gradients
+
+				gradients: true,
+
+				// Auto center this flipbook
+
+				autoCenter: true,
+
+				// Elevation from the edge of the flipbook when turning a page
+
+				elevation: 50,
+
+				// The number of pages
+
+				pages: 6,
+
+				// Events
+
+				when: {
+					turning: function (event, page, view) {
+
+						var book = $(this),
+							currentPage = book.turn('page'),
+							pages = book.turn('pages');
+
+						// Update the current URI
+
+						Hash.go('page/' + page).update();
+
+						// Show and hide navigation buttons
+
+						disableControls(page);
+
+
+						$('.thumbnails .page-' + currentPage).
+							parent().
+							removeClass('current');
+
+						$('.thumbnails .page-' + page).
+							parent().
+							addClass('current');
+
+
+
+					},
+
+					turned: function (event, page, view) {
+
+						disableControls(page);
+
+						$(this).turn('center');
+
+						if (page == 1) {
+							$(this).turn('peel', 'br');
+						}
+
+					},
+
+					missing: function (event, pages) {
+
+						// Add pages that aren't in the magazine
+
+						for (var i = 0; i < pages.length; i++)
+							addPage(pages[i], $(this));
+
+					}
 				}
 
-			</script>
+			});
 
+			// // Zoom.js
 
-			<script type="text/javascript">
+			// $('.magazine-viewport').zoom({
+			// 	flipbook: $('.magazine'),
 
-				function loadApp() {
+			// 	max: function () {
 
-					$('#canvas').fadeIn(1000);
+			// 		return largeMagazineWidth() / $('.magazine').width();
 
-					var flipbook = $('.magazine');
+			// 	},
 
-					// Check if the CSS was already loaded
+			// 	when: {
 
-					if (flipbook.width() == 0 || flipbook.height() == 0) {
-						setTimeout(loadApp, 10);
-						return;
-					}
+			// 		swipeLeft: function () {
 
-					// Create the flipbook
+			// 			$(this).zoom('flipbook').turn('next');
 
-					flipbook.turn({
+			// 		},
 
-						// Magazine width
+			// 		swipeRight: function () {
 
-						width: 922,
+			// 			$(this).zoom('flipbook').turn('previous');
 
-						// Magazine height
+			// 		},
 
-						height: 600,
+			// 		resize: function (event, scale, page, pageElement) {
 
-						// Duration in millisecond
+			// 			if (scale == 1)
+			// 				loadSmallPage(page, pageElement);
+			// 			else
+			// 				loadLargePage(page, pageElement);
 
-						duration: 1000,
+			// 		},
 
-						// Hardware acceleration
+			// 		zoomIn: function () {
 
-						acceleration: true,
+			// 			$('.thumbnails').hide();
+			// 			$('.made').hide();
+			// 			$('.magazine').removeClass('animated').addClass('zoom-in');
+			// 			$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
 
-						// Enables gradients
+			// 			if (!window.escTip && !$.isTouch) {
+			// 				escTip = true;
 
-						gradients: true,
+			// 				$('<div />', { 'class': 'exit-message' }).
+			// 					html('<div>Press ESC to exit</div>').
+			// 					appendTo($('body')).
+			// 					delay(2000).
+			// 					animate({ opacity: 0 }, 500, function () {
+			// 						$(this).remove();
+			// 					});
+			// 			}
+			// 		},
 
-						// Auto center this flipbook
+			// 		zoomOut: function () {
 
-						autoCenter: true,
+			// 			$('.exit-message').hide();
+			// 			$('.thumbnails').fadeIn();
+			// 			$('.made').fadeIn();
+			// 			$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
 
-						// Elevation from the edge of the flipbook when turning a page
+			// 			setTimeout(function () {
+			// 				$('.magazine').addClass('animated').removeClass('zoom-in');
+			// 				resizeViewport();
+			// 			}, 0);
 
-						elevation: 50,
+			// 		}
+			// 	}
+			// });
 
-						// The number of pages
+			// // Zoom event
 
-						pages: 3,
+			// if ($.isTouch)
+			// 	$('.magazine-viewport').on('zoom.doubleTap', zoomTo);
+			// else
+			// 	$('.magazine-viewport').on('zoom.tap', zoomTo);
 
-						// Events
 
-						when: {
-							turning: function (event, page, view) {
+			// Using arrow keys to turn the page
 
-								var book = $(this),
-									currentPage = book.turn('page'),
-									pages = book.turn('pages');
+			$(document).on('keydown', function (e) {
 
-								// Update the current URI
+				var previous = 37, next = 39, esc = 27;
 
-								Hash.go('page/' + page).update();
+				switch (e.keyCode) {
+					case previous:
 
-								// Show and hide navigation buttons
-
-								disableControls(page);
-
-
-								$('.thumbnails .page-' + currentPage).
-									parent().
-									removeClass('current');
-
-								$('.thumbnails .page-' + page).
-									parent().
-									addClass('current');
-
-
-
-							},
-
-							turned: function (event, page, view) {
-
-								disableControls(page);
-
-								$(this).turn('center');
-
-								if (page == 1) {
-									$(this).turn('peel', 'br');
-								}
-
-							},
-
-							missing: function (event, pages) {
-
-								// Add pages that aren't in the magazine
-
-								for (var i = 0; i < pages.length; i++)
-									addPage(pages[i], $(this));
-
-							}
-						}
-
-					});
-
-					// // Zoom.js
-
-					// $('.magazine-viewport').zoom({
-					// 	flipbook: $('.magazine'),
-
-					// 	max: function () {
-
-					// 		return largeMagazineWidth() / $('.magazine').width();
-
-					// 	},
-
-					// 	when: {
-
-					// 		swipeLeft: function () {
-
-					// 			$(this).zoom('flipbook').turn('next');
-
-					// 		},
-
-					// 		swipeRight: function () {
-
-					// 			$(this).zoom('flipbook').turn('previous');
-
-					// 		},
-
-					// 		resize: function (event, scale, page, pageElement) {
-
-					// 			if (scale == 1)
-					// 				loadSmallPage(page, pageElement);
-					// 			else
-					// 				loadLargePage(page, pageElement);
-
-					// 		},
-
-					// 		zoomIn: function () {
-
-					// 			$('.thumbnails').hide();
-					// 			$('.made').hide();
-					// 			$('.magazine').removeClass('animated').addClass('zoom-in');
-					// 			$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
-
-					// 			if (!window.escTip && !$.isTouch) {
-					// 				escTip = true;
-
-					// 				$('<div />', { 'class': 'exit-message' }).
-					// 					html('<div>Press ESC to exit</div>').
-					// 					appendTo($('body')).
-					// 					delay(2000).
-					// 					animate({ opacity: 0 }, 500, function () {
-					// 						$(this).remove();
-					// 					});
-					// 			}
-					// 		},
-
-					// 		zoomOut: function () {
-
-					// 			$('.exit-message').hide();
-					// 			$('.thumbnails').fadeIn();
-					// 			$('.made').fadeIn();
-					// 			$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
-
-					// 			setTimeout(function () {
-					// 				$('.magazine').addClass('animated').removeClass('zoom-in');
-					// 				resizeViewport();
-					// 			}, 0);
-
-					// 		}
-					// 	}
-					// });
-
-					// // Zoom event
-
-					// if ($.isTouch)
-					// 	$('.magazine-viewport').on('zoom.doubleTap', zoomTo);
-					// else
-					// 	$('.magazine-viewport').on('zoom.tap', zoomTo);
-
-
-					// Using arrow keys to turn the page
-
-					$(document).on('keydown', function (e) {
-
-						var previous = 37, next = 39, esc = 27;
-
-						switch (e.keyCode) {
-							case previous:
-
-								// left arrow
-								$('.magazine').turn('previous');
-								e.preventDefault();
-
-								break;
-							case next:
-
-								//right arrow
-								$('.magazine').turn('next');
-								e.preventDefault();
-
-								break;
-							case esc:
-
-								$('.magazine-viewport').zoom('zoomOut');
-								e.preventDefault();
-
-								break;
-						}
-					});
-
-					// URIs - Format #/page/1 
-
-					Hash.on('^page\/([0-9]*)$', {
-						yep: function (path, parts) {
-							var page = parts[1];
-
-							if (page !== undefined) {
-								if ($('.magazine').turn('is'))
-									$('.magazine').turn('page', page);
-							}
-
-						},
-						nop: function (path) {
-
-							if ($('.magazine').turn('is'))
-								$('.magazine').turn('page', 1);
-						}
-					});
-
-
-					$(window).on('resize', function () {
-						resizeViewport();
-					}).on('orientationchange', function () {
-						resizeViewport();
-					});
-
-					// Events for thumbnails
-
-					$('.thumbnails').on('click', function (event) {
-
-						var page;
-
-						if (event.target && (page = /page-([0-9]+)/.exec($(event.target).attr('class')))) {
-
-							$('.magazine').turn('page', page[1]);
-						}
-					});
-
-					$('.thumbnails li').
-						on($.mouseEvents.over, function () {
-
-							$(this).addClass('thumb-hover');
-
-						}).on($.mouseEvents.out, function () {
-
-							$(this).removeClass('thumb-hover');
-
-						});
-
-					if ($.isTouch) {
-
-						$('.thumbnails').
-							addClass('thumbanils-touch').
-							on($.mouseEvents.move, function (event) {
-								event.preventDefault();
-							});
-
-					} else {
-
-						$('.thumbnails ul').on('mouseover', function () {
-
-							$('.thumbnails').addClass('thumbnails-hover');
-
-						}).on('mousedown', function () {
-
-							return false;
-
-						}).on('mouseout', function () {
-
-							$('.thumbnails').removeClass('thumbnails-hover');
-
-						});
-
-					}
-
-
-					// Regions
-
-					if ($.isTouch) {
-						$('.magazine').on('touchstart', regionClick);
-					} else {
-						$('.magazine').on('click', regionClick);
-					}
-
-					// Events for the next button
-
-					$('.next-button').on($.mouseEvents.over, function () {
-
-						$(this).addClass('next-button-hover');
-
-					}).on($.mouseEvents.out, function () {
-
-						$(this).removeClass('next-button-hover');
-
-					}).on($.mouseEvents.down, function () {
-
-						$(this).addClass('next-button-down');
-
-					}).on($.mouseEvents.up, function () {
-
-						$(this).removeClass('next-button-down');
-
-					}).on('click', function () {
-
-						$('.magazine').turn('next');
-
-					});
-
-					// Events for the next button
-
-					$('.previous-button').on($.mouseEvents.over, function () {
-
-						$(this).addClass('previous-button-hover');
-
-					}).on($.mouseEvents.out, function () {
-
-						$(this).removeClass('previous-button-hover');
-
-					}).on($.mouseEvents.down, function () {
-
-						$(this).addClass('previous-button-down');
-
-					}).on($.mouseEvents.up, function () {
-
-						$(this).removeClass('previous-button-down');
-
-					}).on('click', function () {
-
+						// left arrow
 						$('.magazine').turn('previous');
+						e.preventDefault();
 
-					});
+						break;
+					case next:
 
+						//right arrow
+						$('.magazine').turn('next');
+						e.preventDefault();
 
-					resizeViewport();
+						break;
+					case esc:
 
-					$('.magazine').addClass('animated');
-
-				}
-
-				// Zoom icon
-
-				$('.zoom-icon').on('mouseover', function () {
-
-					if ($(this).hasClass('zoom-icon-in'))
-						$(this).addClass('zoom-icon-in-hover');
-
-					if ($(this).hasClass('zoom-icon-out'))
-						$(this).addClass('zoom-icon-out-hover');
-
-				}).on('mouseout', function () {
-
-					if ($(this).hasClass('zoom-icon-in'))
-						$(this).removeClass('zoom-icon-in-hover');
-
-					if ($(this).hasClass('zoom-icon-out'))
-						$(this).removeClass('zoom-icon-out-hover');
-
-				}).on('click', function () {
-
-					if ($(this).hasClass('zoom-icon-in'))
-						$('.magazine-viewport').zoom('zoomIn');
-					else if ($(this).hasClass('zoom-icon-out'))
 						$('.magazine-viewport').zoom('zoomOut');
+						e.preventDefault();
+
+						break;
+				}
+			});
+
+			// URIs - Format #/page/1 
+
+			Hash.on('^page\/([0-9]*)$', {
+				yep: function (path, parts) {
+					var page = parts[1];
+
+					if (page !== undefined) {
+						if ($('.magazine').turn('is'))
+							$('.magazine').turn('page', page);
+					}
+
+				},
+				nop: function (path) {
+
+					if ($('.magazine').turn('is'))
+						$('.magazine').turn('page', 1);
+				}
+			});
+
+
+			$(window).on('resize', function () {
+				resizeViewport();
+			}).on('orientationchange', function () {
+				resizeViewport();
+			});
+
+			// Events for thumbnails
+
+			$('.thumbnails').on('click', function (event) {
+
+				var page;
+
+				if (event.target && (page = /page-([0-9]+)/.exec($(event.target).attr('class')))) {
+
+					$('.magazine').turn('page', page[1]);
+				}
+			});
+
+			$('.thumbnails li').
+				on($.mouseEvents.over, function () {
+
+					$(this).addClass('thumb-hover');
+
+				}).on($.mouseEvents.out, function () {
+
+					$(this).removeClass('thumb-hover');
 
 				});
 
-				$('#canvas').hide();
+			if ($.isTouch) {
 
-				// Load turn.js
+				$('.thumbnails').
+					addClass('thumbanils-touch').
+					on($.mouseEvents.move, function (event) {
+						event.preventDefault();
+					});
 
-				loadApp()
+			} else {
 
-			</script>
+				$('.thumbnails ul').on('mouseover', function () {
+
+					$('.thumbnails').addClass('thumbnails-hover');
+
+				}).on('mousedown', function () {
+
+					return false;
+
+				}).on('mouseout', function () {
+
+					$('.thumbnails').removeClass('thumbnails-hover');
+
+				});
+
+			}
+
+
+			// Regions
+
+			if ($.isTouch) {
+				$('.magazine').on('touchstart', regionClick);
+			} else {
+				$('.magazine').on('click', regionClick);
+			}
+
+			// Events for the next button
+
+			$('.next-button').on($.mouseEvents.over, function () {
+
+				$(this).addClass('next-button-hover');
+
+			}).on($.mouseEvents.out, function () {
+
+				$(this).removeClass('next-button-hover');
+
+			}).on($.mouseEvents.down, function () {
+
+				$(this).addClass('next-button-down');
+
+			}).on($.mouseEvents.up, function () {
+
+				$(this).removeClass('next-button-down');
+
+			}).on('click', function () {
+
+				$('.magazine').turn('next');
+
+			});
+
+			// Events for the next button
+
+			$('.previous-button').on($.mouseEvents.over, function () {
+
+				$(this).addClass('previous-button-hover');
+
+			}).on($.mouseEvents.out, function () {
+
+				$(this).removeClass('previous-button-hover');
+
+			}).on($.mouseEvents.down, function () {
+
+				$(this).addClass('previous-button-down');
+
+			}).on($.mouseEvents.up, function () {
+
+				$(this).removeClass('previous-button-down');
+
+			}).on('click', function () {
+
+				$('.magazine').turn('previous');
+
+			});
+
+
+			resizeViewport();
+
+			$('.magazine').addClass('animated');
+
+		}
+
+		// Zoom icon
+
+		$('.zoom-icon').on('mouseover', function () {
+
+			if ($(this).hasClass('zoom-icon-in'))
+				$(this).addClass('zoom-icon-in-hover');
+
+			if ($(this).hasClass('zoom-icon-out'))
+				$(this).addClass('zoom-icon-out-hover');
+
+		}).on('mouseout', function () {
+
+			if ($(this).hasClass('zoom-icon-in'))
+				$(this).removeClass('zoom-icon-in-hover');
+
+			if ($(this).hasClass('zoom-icon-out'))
+				$(this).removeClass('zoom-icon-out-hover');
+
+		}).on('click', function () {
+
+			if ($(this).hasClass('zoom-icon-in'))
+				$('.magazine-viewport').zoom('zoomIn');
+			else if ($(this).hasClass('zoom-icon-out'))
+				$('.magazine-viewport').zoom('zoomOut');
+
+		});
+
+		$('#canvas').hide();
+
+		// Load turn.js
+
+		loadApp()
+
+	</script>
 
 </body>
 

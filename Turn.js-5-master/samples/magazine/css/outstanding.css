@@ -1,0 +1,48 @@
+#outstandingcont {
+    display: flex;
+    flex-direction: column;
+    margin-left: -4.7%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #77777770;
+    height: 93%;
+    width: 90%;
+    z-index: 0;
+}
+
+#outstanding1,
+#outstanding2,
+#outstanding3 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+#outstanding1.show::before {
+    content: "Tramadol";
+}
+#outstanding2.show::before {
+    content: "Paracetamol";
+}
+#outstanding3.show::before {
+    content: "Ibuprofen";
+}
+
+
+
+document.querySelectorAll('#outstanding1, #outstanding2, #outstanding3')
+    .forEach(el => {
+        el.addEventListener('click', () => {
+            el.classList.toggle('show');
+        });
+    });

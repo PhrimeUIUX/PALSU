@@ -1,0 +1,230 @@
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <div id="container"></div>
+
+  <script>
+    const outstandingData = [
+      {
+        logo: "pics/om/om2.png",
+        initialTexts: [
+          "868 Document Processing Services",
+          "Asuncion Nobleza Pilapil",
+        ],
+        toggledTexts: ["0928 513 6200", "868dps@gmail.com"],
+      },
+      {
+        logo: "pics/om/omplaceholder.png",
+        initialTexts: ["A.R. Lustre Jr Construction", "Armando Ruiz Jr Lustre"],
+        toggledTexts: ["A.R. Lustre Jr Construction", "Armando Ruiz Jr Lustre"],
+      },
+      {
+        logo: "pics/om/om4.png",
+        initialTexts: ["Alton General Merchandising", "Alvin Allan C. Sia"],
+        toggledTexts: ["0905 310 2300", "alton.gen@gmail.com"],
+      },
+      {
+        logo: "pics/om/om5.png",
+        initialTexts: ["APO Accounting Office", "Annabelle Pastrana Ong"],
+        toggledTexts: ["0917 794 6202", "apoaccountingoffice11@yahoo.com"],
+      },
+      {
+        logo: "pics/om/om6.png",
+        initialTexts: ["Asian Vanda Villas", "Hellen Donesa Ceballo"],
+        toggledTexts: ["0917 538 7987", "asianvandavilla@gmail.com"],
+      },
+      {
+        logo: "pics/om/om7.png",
+        initialTexts: ["Astoria Palawan", "Rex Benhur Caballes"],
+        toggledTexts: ["0998 961 3419", "reservations@astoriapalawan.com"],
+      },
+      {
+        logo: "pics/om/om8.png",
+        initialTexts: ["Avenue Enterprises Inc", "Teresita Go Dimalanta"],
+        toggledTexts: ["0908 812 5811", "customerservice@aei.ph"],
+      },
+      {
+        logo: "pics/om/om9.png",
+        initialTexts: ["Bambu Suites", "Hazel Ann Torres To"],
+        toggledTexts: ["0915 582 2114", "bambusuitesph@gmail.com"],
+      },
+      {
+        logo: "pics/om/om10.png",
+        initialTexts: ["Binuatan Creations", "Eva Timbancaya Valledor"],
+        toggledTexts: ["0999 992 7712", "magharidionimer53@gmail.com"],
+      },
+      {
+        logo: "pics/om/om11.png",
+        initialTexts: ["Bistro Cabalen Catering", "Dave Valencia"],
+        toggledTexts: ["0977 843 0720", "bistrocabalen@gmail.com"],
+      },
+      {
+        logo: "pics/om/om12.png",
+        initialTexts: ["Budget Home Depot", "Vincent Gan Tan"],
+        toggledTexts: ["(048) 433 4828", "budgethomedepot@gmail.com"],
+      },
+      {
+        logo: "pics/om/om13.png",
+        initialTexts: ["Callalily Hotel and Resort", "Michelle Tiotangco"],
+        toggledTexts: ["Callalily Hotel and Resort", "Michelle Tiotangco"],
+      },
+      {
+        logo: "pics/om/omplaceholder.png",
+        initialTexts: ["Delta P Inc", "Christopher Reveza Navarro"],
+        toggledTexts: ["Delta P Inc", "Christopher Reveza Navarro"],
+      },
+      {
+        logo: "pics/om/om15.png",
+        initialTexts: ["Eye Level", "Christina Lim"],
+        toggledTexts: ["0915 976 8287", "eyelevel.puertoprincesa@gmail.com"],
+      },
+    ];
+
+    const container = document.getElementById("container");
+
+    outstandingData.forEach((item, index) => {
+      const div = document.createElement("div");
+      div.className = "toggle-item";
+      div.setAttribute("data-index", index);
+      div.setAttribute("tabindex", 0); // keyboard focusable
+
+      div.innerHTML = `
+        <img src="${item.logo}" alt="Logo ${index + 1}" />
+        <div class="texts">
+          <span class="line1">${item.initialTexts[0]}</span>
+          <span class="line2">${item.initialTexts[1]}</span>
+        </div>
+      `;
+
+      container.appendChild(div);
+    });
+
+    container.addEventListener("click", (e) => {
+      const item = e.target.closest(".toggle-item");
+      if (!item) return;
+
+      const idx = item.getAttribute("data-index");
+      const data = outstandingData[idx];
+      const line1 = item.querySelector(".line1");
+      const line2 = item.querySelector(".line2");
+      const toggled = item.dataset.toggled === "true";
+
+      if (toggled) {
+        line1.textContent = data.initialTexts[0];
+        line2.textContent = data.initialTexts[1];
+        item.dataset.toggled = "false";
+      } else {
+        line1.textContent = data.toggledTexts[0];
+        line2.textContent = data.toggledTexts[1];
+        item.dataset.toggled = "true";
+      }
+    });
+
+    container.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        const item = e.target.closest(".toggle-item");
+        if (!item) return;
+        e.preventDefault();
+        item.click();
+      }
+    });
+  </script>
+
+  <style>
+    body,
+    .toggle-item {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      /* prevent columns from resizing unevenly */
+      /* optionally fix container max-width if needed */
+    }
+
+    .toggle-item {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s ease;
+      outline-offset: 2px;
+      width: 100%;
+      box-sizing: border-box;
+      /* fix min and max width so toggle text won't resize the item */
+      min-width: 0;
+      /* optionally set a fixed height to keep all uniform */
+      height: 56px; /* adjust as needed */
+    }
+
+    .toggle-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .texts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      width: 100%;
+      max-width: 180px;
+      overflow: visible; /* let content show fully */
+    }
+
+    .texts span {
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow: visible;
+      display: block;
+    }
+
+    .line1 {
+      font-weight: 600;
+      font-size: 0.7rem;
+    }
+
+    .line2 {
+      font-size: 0.6rem;
+      color: #555;
+    }
+
+    @media (max-width: 100px) {
+      #container {
+        padding: 0 10px;
+      }
+      .toggle-item img {
+        width: 50px;
+        height: 50px;
+        margin-right: 8px;
+      }
+      .line1 {
+        font-size: 0.8rem;
+      }
+      .line2 {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</body>

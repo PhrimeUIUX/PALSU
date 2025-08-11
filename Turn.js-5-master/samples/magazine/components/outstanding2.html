@@ -1,0 +1,227 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="container"></div>
+
+  <script>
+    const outstandingData = [
+     
+      {
+        logo: "pics/om/om16.png",
+        initialTexts: ["Farmbihira Farm", "Jacques Morales Zarate"],
+        toggledTexts: ["0926 039 9048", "farmbihirappc@gmail.com"]
+      },
+      {
+        logo: "pics/om/omplaceholder.png",
+        initialTexts: ["Filipino Hospitality Management and Consultancy", "Martin Sazon Aguilar"],
+        toggledTexts: ["Filipino Hospitality Management and Consultancy", "Martin Sazon Aguilar"]
+      },
+      {
+        logo: "pics/om/om18.png",
+        initialTexts: ["Foundever Philippines Corporation", "Lady Diana Alansalon"],
+        toggledTexts: ["Foundever Philippines Corporation", "Lady Diana Alansalon"]
+      },
+      {
+        logo: "pics/om/omplaceholder.png",
+        initialTexts: ["Golraz Enterprises Inc", "Lolita Go Zabala"],
+        toggledTexts: ["Golraz Enterprises Inc", "Lolita Go Zabala"]
+      }, 
+      {
+        logo: "pics/om/om20.png",
+        initialTexts: ["Holiday Suites Hotel", "Engr. Ana Margarita G. Lustre-Malijan"],
+        toggledTexts: ["0939 924 2756", "holidaysuitespalawan@gmail.com"]
+      }, 
+      {
+        logo: "pics/om/om21.png",
+        initialTexts: ["Horizon Sun Charters", "Raymond Schwab"],
+        toggledTexts: ["0926 051 0831", "info@seaplane.ph"]
+      }, 
+      {
+        logo: "pics/om/om22.png",
+        initialTexts: ["IWH Puerto Princesa Hotel Corp", "Diana Christy Tamayo Inigo"],
+        toggledTexts: ["0915 012 7228", "reservations@bwplusivywall.com"]
+      },
+      {
+        logo: "pics/om/om23.png",
+        initialTexts: ["JA Malijan Construction", "Jeffrey Malijan"],
+        toggledTexts: ["0917 706 4982", "jamalijanconstruction@gmail.com"]
+      },
+      {
+        logo: "pics/om/om24.png",
+        initialTexts: ["J1 Diner & Bar", "John Michael Responte Deparita"],
+        toggledTexts: ["0908 211 4362", "j1.dinerandbar@gmail.com"]
+      },
+      {
+        logo: "pics/om/om25.png",
+        initialTexts: ["Jao Surublien Pasalubong & Souvenir Corner", "Jessette Amanca Oquendo"],
+        toggledTexts: ["0917 182 1794", "jaosurublien98@gmail.com"]
+      },
+      {
+        logo: "pics/om/om26.png",
+        initialTexts: ["Ka Inato Restaurant", "Eric John Gaite Yayen"],
+        toggledTexts: ["0917 553 1721", "ka_inato@yahoo.com"]
+      },
+      {
+        logo: "pics/om/omplaceholder.png",
+        initialTexts: ["Kinabuch Grill & Bar", "Edward Elliseff Chase"],
+        toggledTexts: ["(048) 434 5194", "kgb_palawan@yahoo.com"]
+      },
+      {
+        logo: "pics/om/om28.png",
+        initialTexts: ["Lion Heart Farms", "Russel Fernandez"],
+        toggledTexts: ["0948 291 7949", "mail@lionheartfarms.com.ph"]
+      },
+      {
+        logo: "pics/om/om29.png",
+        initialTexts: ["The Willow Tree Art Supplies", "Maria Teodora E. Conde-Prieto"],
+        toggledTexts: ["0969 049 4418", "thewillowtree.1112@gmail.com"]
+      },
+    
+    ];
+
+    const container = document.getElementById('container');
+
+    outstandingData.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = 'toggle-item';
+      div.setAttribute('data-index', index);
+      div.setAttribute('tabindex', 0); // keyboard focusable
+
+      div.innerHTML = `
+        <img src="${item.logo}" alt="Logo ${index + 1}" />
+        <div class="texts">
+          <span class="line1">${item.initialTexts[0]}</span>
+          <span class="line2">${item.initialTexts[1]}</span>
+        </div>
+      `;
+
+      container.appendChild(div);
+    });
+
+    container.addEventListener('click', (e) => {
+      const item = e.target.closest('.toggle-item');
+      if (!item) return;
+
+      const idx = item.getAttribute('data-index');
+      const data = outstandingData[idx];
+      const line1 = item.querySelector('.line1');
+      const line2 = item.querySelector('.line2');
+      const toggled = item.dataset.toggled === 'true';
+
+      if (toggled) {
+        line1.textContent = data.initialTexts[0];
+        line2.textContent = data.initialTexts[1];
+        item.dataset.toggled = 'false';
+      } else {
+        line1.textContent = data.toggledTexts[0];
+        line2.textContent = data.toggledTexts[1];
+        item.dataset.toggled = 'true';
+      }
+    });
+
+    container.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const item = e.target.closest('.toggle-item');
+        if (!item) return;
+        e.preventDefault();
+        item.click();
+      }
+    });
+  </script>
+
+  <style>
+    body, .toggle-item {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  /* prevent columns from resizing unevenly */
+  /* optionally fix container max-width if needed */
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+  outline-offset: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  /* fix min and max width so toggle text won't resize the item */
+  min-width: 0;
+  /* optionally set a fixed height to keep all uniform */
+  height: 56px; /* adjust as needed */
+}
+
+.toggle-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;          
+  max-width: 180px;     
+  overflow: visible;    /* let content show fully */
+}
+
+.texts span {
+  white-space: normal;          
+  overflow-wrap: break-word;   
+  word-wrap: break-word;
+  overflow: visible;            
+  display: block;       
+}
+
+
+
+    .line1 {
+      font-weight: 600;
+      font-size: 0.7rem;
+    }
+
+    .line2 {
+      font-size: 0.6rem;
+      color: #555;
+    }
+
+    @media (max-width: 100px) {
+      #container {
+        padding: 0 10px;
+      }
+      .toggle-item img {
+        width: 50px;
+        height: 50px;
+        margin-right: 8px;
+      }
+      .line1 {
+        font-size: 0.8rem;
+      }
+      .line2 {
+        font-size: 0.70rem;
+      }
+    }
+  </style>
+</body>

@@ -1,0 +1,17 @@
+[
+  {
+    "logo": "pics/ppci.png",
+    "initialTexts": ["Title 1", "Subtitle 1"],
+    "toggledTexts": ["Title 2", "Subtitle 2"]
+  },
+  {
+    "logo": "pics/ppci.png",
+    "initialTexts": ["Another Title", "Another Subtitle"],
+    "toggledTexts": ["Alternate Title", "Alternate Subtitle"]
+  },
+  {
+    "logo": "pics/ppci.png",
+    "initialTexts": ["Third Title", "Third Subtitle"],
+    "toggledTexts": ["Third Alt Title", "Third Alt Subtitle"]
+  }
+]

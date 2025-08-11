@@ -6,30 +6,52 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #77777770;
+    background-color: #ffffff00;
     height: 93%;
     width: 90%;
     z-index: 0;
+}
+
+.outstandingcontcont {
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.outstanding-logo {
+    display: flex;
+    width: 35px;
+    height: auto;
+}
+
+.line-break {
+    color: red;
 }
 
 #outstanding1,
 #outstanding2,
 #outstanding3 {
     display: flex;
+    height: 35px;
+    overflow: hidden;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
+    text-align: left;
+    text-transform: ;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
 }
 
 #outstanding1.show::before {
-    content: "Tramadol";
+    content: "Tramadol\A Wow";
+    white-space: pre;
 }
 #outstanding2.show::before {
     content: "Paracetamol";
@@ -40,9 +62,3 @@
 
 
 
-document.querySelectorAll('#outstanding1, #outstanding2, #outstanding3')
-    .forEach(el => {
-        el.addEventListener('click', () => {
-            el.classList.toggle('show');
-        });
-    });

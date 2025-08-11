@@ -1650,81 +1650,6 @@
 			</div>
 	</div>
 
-	<script>
-function disableIframePointerEventsOnDrag() {
-  const iframe = document.getElementById('outstandingframe');
-  if (!iframe) {
-    console.error('Iframe with id "outstandingframe" not found');
-    return;
-  }
-
-  let isDragging = false;
-  let startX = 0;
-  let startY = 0;
-  const dragThreshold = 10; // minimum pixels to consider a drag/swipe
-
-  function onPointerDown(e) {
-    isDragging = false;
-    if (e.touches && e.touches.length > 0) {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-    } else {
-      startX = e.clientX;
-      startY = e.clientY;
-    }
-  }
-
-  function onPointerMove(e) {
-    if (startX === null || startY === null) return;
-
-    let currentX, currentY;
-    if (e.touches && e.touches.length > 0) {
-      currentX = e.touches[0].clientX;
-      currentY = e.touches[0].clientY;
-    } else {
-      currentX = e.clientX;
-      currentY = e.clientY;
-    }
-
-    const dx = Math.abs(currentX - startX);
-    const dy = Math.abs(currentY - startY);
-
-    if (dx > dragThreshold || dy > dragThreshold) {
-      if (!isDragging) {
-        isDragging = true;
-        // Detected drag/swipe start — disable iframe pointer events
-        iframe.style.pointerEvents = 'none';
-      }
-    }
-  }
-
-  function onPointerUp() {
-    if (isDragging) {
-      // Re-enable pointer events after drag ends, with small delay to avoid conflicts
-      setTimeout(() => {
-        iframe.style.pointerEvents = 'auto';
-      }, 300);
-    }
-    startX = null;
-    startY = null;
-    isDragging = false;
-  }
-
-  // Attach event listeners
-  document.addEventListener('mousedown', onPointerDown);
-  document.addEventListener('mousemove', onPointerMove);
-  document.addEventListener('mouseup', onPointerUp);
-
-  document.addEventListener('touchstart', onPointerDown);
-  document.addEventListener('touchmove', onPointerMove);
-  document.addEventListener('touchend', onPointerUp);
-  document.addEventListener('touchcancel', onPointerUp);
-}
-
-// Call the function once your DOM is ready
-disableIframePointerEventsOnDrag();
-
-	</script>
 
 
 	<script>
@@ -1765,6 +1690,8 @@ disableIframePointerEventsOnDrag();
 				setTimeout(loadApp, 10);
 				return;
 			}
+
+			
 
 			// Create the flipbook
 

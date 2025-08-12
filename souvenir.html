@@ -13,10 +13,26 @@
         }
 
         #iframe-container {
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Default desktop: no scroll */
-        }
+    width: 100%;
+    height: 100%;
+    min-width: 1024px;   /* fits smaller desktops */
+    max-width: 1920px;   /* prevents ultra-wide stretching */
+    margin: 0 auto;      /* center on larger screens */
+    overflow: hidden;    /* Default desktop: no scroll */
+}
+
+/* On mobile, allow horizontal scroll */
+@media (max-width: 768px) {
+    #iframe-container {
+        width: 200%;
+        min-width: unset; /* let it shrink on mobile */
+        max-width: unset; /* remove desktop max limit */
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 
         #souvenir-iframe {
             width: 100%;

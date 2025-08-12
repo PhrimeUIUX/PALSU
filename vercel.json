@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/program", "destination": "/program.html" },
-    { "source": "/souvenir_draft", "destination": "/souvenir.html" }
+    { "source": "/souvenir", "destination": "/souvenir.html" }
   ]
 }

@@ -1,43 +1,46 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="https://palawanbusinesssummit.com/assets/featuregraphic.png">
     <title>Souvenir</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #iframe-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Default desktop: no scroll */
+        }
+
+        #souvenir-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* On mobile, allow horizontal scrolling */
+        @media (max-width: 768px) {
+            #iframe-container {
+                overflow-x: auto; /* enable horizontal scroll */
+                overflow-y: hidden; /* keep vertical scroll off if not needed */
+                -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
+            }
+
+            #souvenir-iframe {
+                min-width: 100vw; /* ensure iframe fits horizontally */
+            }
+        }
+    </style>
 </head>
-
-<style>
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        /* prevent scrollbars */
-        width: 100vw;
-        height: 100vh;
-    }
-
-    #iframe-container {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    #souvenir-iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        overflow: hidden;
-    }
-</style>
-
 <body>
     <div id="iframe-container">
-        <iframe id="souvenir-iframe" src="Turn.js-5-master/samples/magazine/index.html" scrolling="no"></iframe>
+        <iframe id="souvenir-iframe" src="Turn.js-5-master/samples/magazine/index.html" scrolling="yes"></iframe>
     </div>
-    <script>
-        // Optional: Add any JavaScript functionality you need here
-    </script>
 </body>
-
 </html>
